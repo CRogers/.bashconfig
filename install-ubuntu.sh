@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PWD=`pwd`
+BASHCONFIG=`pwd`
 FILE="$HOME/.bashrc"
-echo ". $(PWD)/bash_profile" >$FILE
-
+echo "BASHCONFIG='$BASHCONFIG'" >$FILE
+echo ". $BASHCONFIG/bash_profile.sh" >>$FILE

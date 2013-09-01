@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PWD=`pwd`
+BASHCONFIG=`pwd`
 FILE="$HOME/.bash_profile"
-echo ". $(PWD)/bash_profile" >$FILE
-echo ". $(PWD)/git-completion" >>$FILE
-
+echo "BASHCONFIG='$BASHCONFIG'" >$FILE
+echo ". $BASHCONFIG/bash_profile.sh" >>$FILE
+echo ". $BASHCONFIG/git-completion.sh" >>$FILE
