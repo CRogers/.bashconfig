@@ -1,5 +1,14 @@
 parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+parse_git_branch_brackets() {
+	local BRANCH=$(parse_git_branch)
+	if [ -z "$BRANCH" ]; then
+		echo "$BRANCH"
+	else
+		echo "[$BRANCH]"
+	fi
 }
 
 function prompt {
@@ -9,7 +18,7 @@ function prompt {
 	local BGREEN="\[\e[0;32m;1m\]"
 	local CEND="\[\e[m\]" 
 
-	PS1="$CYAN\w$GREEN\$(parse_git_branch)$CEND $ "
+	PS1="$CYAN\w$GREEN\$(parse_git_branch_brackets)$CEND $ "
 }
 
 prompt

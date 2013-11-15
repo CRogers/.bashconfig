@@ -1,5 +1,7 @@
+. "$BASHCONFIG/path.sh"
 . "$BASHCONFIG/ssh-agent.sh"
 . "$BASHCONFIG/colours.sh"
 . "$BASHCONFIG/java-config.sh"
 . "$BASHCONFIG/prompt.sh"
 . "$BASHCONFIG/marks.sh"
+. "$BASHCONFIG/ec2.sh"
